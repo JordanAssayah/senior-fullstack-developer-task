@@ -2,16 +2,29 @@ import { createStore } from "vuex"
 
 export default createStore({
 	state: {
-		// Define your state here
+		user: null,
+		isAuthenticated: false
 	},
 	getters: {
-		// Define your getters here
+		user: state => state.user,
 	},
 	mutations: {
-		// Define your mutations here
+		SET_USER(state, user) {
+			state.user = user;
+			state.isAuthenticated = true;
+		},
+		LOGOUT(state) {
+			state.user = null;
+			state.isAuthenticated = false;
+		}
 	},
 	actions: {
-		// Define your actions here
+		login ({ commit }, user) {
+			commit('SET_USER', user);
+		},
+		logout({ commit }) {
+			commit('LOGOUT');
+		}
 	},
 	modules: {
 		// Define your modules here
