@@ -1,22 +1,10 @@
-import { Controller, Get, UseGuards, Req } from '@nestjs/common';
-import { AuthGuard } from './guards/auth.guard';
-import { Request } from 'express';
-import { User } from './users/users.entity';
+import { Controller, Get } from '@nestjs/common';
 
-interface RequestWithUser extends Request {
-  user: User;
-}
 
 @Controller()
 export class AppController {
-  @UseGuards(AuthGuard)
   @Get()
-  getHello(@Req() request: RequestWithUser) {
-    return {
-      id: request.user.id,
-      username: request.user.username,
-      role: request.user.role,
-      status: request.user.status,
-    };
+  getHello() {
+    return 'Hello World!';
   }
 }

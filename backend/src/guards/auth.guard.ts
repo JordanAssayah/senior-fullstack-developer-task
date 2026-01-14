@@ -6,7 +6,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from '../users/users.service';
 import { Request } from 'express';
-import { User } from '../users/users.entity';
+import { User, UserStatus } from '../users/users.entity';
 
 interface RequestWithUser extends Request {
   user?: User;
