@@ -18,8 +18,8 @@ This task is designed to evaluate your problem-solving skills and full-stack dev
 
 ### With your submission, include:
 
-- A brief explanation of your implementation.
-- Suggestions for improvements or architectural changes you would recommend. The existing codebase is intentionally not perfect.
+- A brief explanation of your [implementation](EXPLANATION.md).
+- [Suggestions](SUGGESTIONS.md) for improvements or architectural changes you would recommend. The existing codebase is intentionally not perfect.
 
 ---
 

@@ -9,6 +9,8 @@ I've also moved the root .env.example file to the backend folder since it is rel
 
 I've also added in the main.ts file the cors rule to let the frontend use the backend since it's not the same domain.
 
+I've fixed the getHello test of the appController.
+
 ## Frontend
 I've created a services folder where you usually add different kind of api points or websockets instances etc...
 
