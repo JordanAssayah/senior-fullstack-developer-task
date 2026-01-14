@@ -1,7 +1,10 @@
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
 
-export const USER_ROLES = ['regular', 'editor', 'admin'] as const;
-export type UserRole = typeof USER_ROLES[number];
+export enum UserRole {
+  ADMIN = 'admin',
+  EDITOR = 'editor',
+  REGULAR = 'regular'
+};
 
 @Entity('users')
 export class User {
@@ -11,7 +14,7 @@ export class User {
   @Column({ unique: true })
   username: string;
 
-  @Column({ type: "simple-json", nullable: false, default: '["regular"]' })
+  @Column({ type: "simple-json", nullable: false, default: JSON.stringify([UserRole.REGULAR]) })
   roles: UserRole[];
 
   @Column()
