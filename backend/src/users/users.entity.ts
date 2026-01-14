@@ -23,6 +23,6 @@ export class User {
   @Column({ type: "simple-json", nullable: false, default: JSON.stringify([UserRole.REGULAR]) })
   roles: UserRole[];
 
-  @Column({ type: 'simple-enum', enum: UserStatus, nullable: false, default: UserStatus.ENABLED })
+  @Column()
   status: UserStatus;
 }
