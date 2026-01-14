@@ -61,7 +61,8 @@ This is a full-stack application using the following technologies:
    ```
 
 3. **Set environment variables:**
-   - Copy `.env.example` to `.env` in the backend directory.
+   - Copy `.env.example` of the backend directory to `.env` in the backend directory.
+   - Copy `.env.example` of the frontend directory to `.env` in the frontend directory.
    - SQLite is used, so no additional database setup is required.
 
 4. **Run database migrations:**
