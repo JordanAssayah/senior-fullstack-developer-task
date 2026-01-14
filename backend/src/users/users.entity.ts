@@ -6,6 +6,12 @@ export enum UserRole {
   REGULAR = 'regular'
 };
 
+export enum UserStatus {
+  ENABLED = 'enabled',
+  DISABLED = 'disabled',
+  DELETED = 'deleted'
+}
+
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
@@ -17,6 +23,6 @@ export class User {
   @Column({ type: "simple-json", nullable: false, default: JSON.stringify([UserRole.REGULAR]) })
   roles: UserRole[];
 
-  @Column()
-  status: boolean;
+  @Column({ type: 'simple-enum', enum: UserStatus, nullable: false, default: UserStatus.ENABLED })
+  status: UserStatus;
 }
